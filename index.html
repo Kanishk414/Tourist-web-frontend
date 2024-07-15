@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtra Tourism</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Maharashtra Tourism</label>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h1>Discover Maharashtra</h1>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="Ganpatipule.jpg" alt="Ganpatipule" onclick="showDestination('ganpatipule')">
+                    <h3>Ganpatipule</h3>
+                </div>
+                <div class="grid-item">
+                    <img src="Lonavla.jpg" alt="Lonavala" onclick="showDestination('lonavala')">
+                    <h3>Lonavala</h3>
+                </div>
+                <div class="grid-item">
+                    <img src="BHANDARDARA.jpg" alt="Bhandardara" onclick="showDestination('bhandardara')">
+                    <h3>Bhandardara</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Maharashtra Tourism is dedicated to showcasing the beauty and diversity of our state. From pristine beaches to lush hill stations, we offer unforgettable experiences for every traveler.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        
+        <section id="destination-info" class="hidden">
+            <div id="bhandardara" class="destination-content">
+                <h2>Bhandardara</h2>
+                <p>Bhandardara is a holiday resort village near Igatpuri, in the western ghats of India. The village is located in the Akole tehsil, Ahmednagar district of the state of Maharashtra, about 185 kilometers  from Mumbai, 155 kilometers  from Ahmednagar and 73 kilometers  from Nashik.Bhandardara sits by the Pravara River, and the natural environment, waterfalls, mountains, Wilson dam, Arthur lake and Randha falls are tourist attractions.Bhandardara attractions include Wilson Dam and Arthur Lake. Since late 2010s attraction in this place is Fireflies camp in the Purushwadi area.
+                </p>
+            </div>
+            <div id="ganpatipule" class="destination-content">
+                <h2>Ganpatipule</h2>
+                <p>Ganpatipule is a town on the Konkan Coast of western India. It’s known for its beaches, such as Ganpatipule Beach and nearby Aare Ware Beach. On Ganpatipule Beach, the centuries-old Swayambhu Ganpati Temple is a pilgrimage site and houses a large orange statue of Ganesh. Prachin Konkan is an open-air museum with models depicting traditional Konkan life. Jaigad Fort and a British-built lighthouse lie to the north</p>
+            </div>
+            <div id="lonavala" class="destination-content">
+                <h2>Lonavla</h2>
+                <p>Lonavala is a hill station surrounded by green valleys in western India near Mumbai. The Karla Caves and the Bhaja Caves are ancient Buddhist shrines carved out of the rock. They feature massive pillars and intricate relief sculptures. South of the Bhaja Caves sits the imposing Lohagad Fort, with its 4 gates. West of here is Bhushi Dam, where water overflows onto a set of steps during rainy season.</p>
+            </div>
+            <button onclick="goHome()" class="back-btn">Back to Home</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright © Maharashtra Tourism</p>
+    </footer>
+
+    <script>
+        function showDestination(destination) {
+            document.getElementById('home').classList.add('hidden');
+            document.getElementById('about').classList.add('hidden');
+            document.getElementById('contact').classList.add('hidden');
+            document.getElementById('destination-info').classList.remove('hidden');
+            
+            var destinationContents = document.getElementsByClassName('destination-content');
+            for (var i = 0; i < destinationContents.length; i++) {
+                destinationContents[i].style.display = 'none';
+            }
+            document.getElementById(destination).style.display = 'block';
+        }
+    
+        function goHome() {
+            document.getElementById('home').classList.remove('hidden');
+            document.getElementById('about').classList.remove('hidden');
+            document.getElementById('contact').classList.remove('hidden');
+            document.getElementById('destination-info').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
