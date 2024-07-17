@@ -1,2 +1,4 @@
 # Tourist-web-frontend
-College project .
+-- Only frontend is used here . 
+-- no server side coding .
+-- just run the index.html . 
